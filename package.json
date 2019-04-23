@@ -1,6 +1,6 @@
 {
   "name": "alert-message",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "alert for xhr response status or page",
   "main": "index.js",
   "scripts": {

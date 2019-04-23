@@ -1,6 +1,6 @@
 {
-  "name": "@rickyhuang/alert-message",
-  "version": "0.0.5",
+  "name": "alert-message",
+  "version": "0.0.7",
   "description": "alert for xhr response status or page",
   "main": "index.js",
   "scripts": {

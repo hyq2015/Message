@@ -5,6 +5,7 @@ npm install -D alert-message
 
 ```
 import Message from "alert-message"
+import "path/to/node_modules/alert-message/lib/styles/index.min.css"
 
 /**
  * @param args - {txt: "", time: 2500}, time default 2500(ms)

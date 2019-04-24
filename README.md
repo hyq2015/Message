@@ -1,3 +1,4 @@
+homepage: [https://github.com/hyq2015/Message](https://github.com/hyq2015/Message)
 ### introduction
 show alert message on your webpage
 ### usage

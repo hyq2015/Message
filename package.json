@@ -1,6 +1,6 @@
 {
   "name": "alert-message",
-  "version": "0.1.2",
+  "version": "0.1.21",
   "description": "show alert message on webpage",
   "main": "index.js",
   "scripts": {

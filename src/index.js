@@ -1,32 +1,28 @@
-const warnImg = require("./images/warn.png"),
-    errorImg = require("./images/error.png"),
-    successImg = require("./images/success.png"),
-    IMG = {
-        warn: warnImg,
-        error: errorImg,
-        success: successImg
-    };
-class Message {
-    constructor () {
+"use strict";
+exports.__esModule = true;
+var warnImg = require("./images/warn.png"), errorImg = require("./images/error.png"), successImg = require("./images/success.png"), IMG = {
+    warn: warnImg,
+    error: errorImg,
+    success: successImg
+};
+var Message = /** @class */ (function () {
+    function Message() {
         this.fadeTime = 2500;
         this.messageContainer = null;
     }
-
-    renderDom (type, args) {
-
+    Message.prototype.renderDom = function (type, args) {
+        var _this = this;
         if (!this.messageContainer) {
             this.messageContainer = document.createElement("div");
             this.messageContainer.className = "r-message-container";
         }
-        let divOuter = document.createElement("div"),
-            div = document.createElement("div"),
-            img = document.createElement("img"),
-            span = document.createElement("span");
+        var divOuter = document.createElement("div"), div = document.createElement("div"), img = document.createElement("img"), span = document.createElement("span");
         div.className = "r-alert";
         img.className = "r-alert-img";
         if (IMG[type]) {
             img.src = IMG[type];
-        } else {
+        }
+        else {
             img.src = IMG.warn;
         }
         span.innerText = args.txt;
@@ -37,24 +33,27 @@ class Message {
         divOuter.appendChild(div);
         this.messageContainer.appendChild(divOuter);
         document.querySelector("body").appendChild(this.messageContainer);
-        setTimeout(() => {
-            this.messageContainer.removeChild(divOuter);
+        setTimeout(function () {
+            _this.messageContainer.removeChild(divOuter);
         }, args.time || this.fadeTime);
-    }
-
+    };
     /**
      *
      * @param args - {txt: "", time: 2500}
      */
-    warn (args = {txt: "", time: 2500}) {
+    Message.prototype.warn = function (args) {
+        if (args === void 0) { args = { txt: "", time: 2500 }; }
         this.renderDom("warn", args);
-    }
-    error (args = {txt: "", time: 2500}) {
+    };
+    Message.prototype.error = function (args) {
+        if (args === void 0) { args = { txt: "", time: 2500 }; }
         this.renderDom("error", args);
-    }
-    success (args = {txt: "", time: 2500}) {
+    };
+    Message.prototype.success = function (args) {
+        if (args === void 0) { args = { txt: "", time: 2500 }; }
         this.renderDom("success", args);
-    }
-}
-
-export default new Message();
+    };
+    return Message;
+}());
+exports.Message = Message;
+exports["default"] = new Message();

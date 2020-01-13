@@ -9,8 +9,7 @@
     "build": "babel src --out-dir lib",
     "build-ts": "tsc",
     "eslint": "eslint src",
-    "gulp": "gulp",
-    "prepublish": "run-s eslint gulp"
+    "gulp": "gulp"
   },
   "repository": {
     "type": "git",
